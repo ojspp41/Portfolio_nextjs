@@ -10,7 +10,7 @@ export default function Footer(){
 
                     <Link href="/">
                         <a className="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
-                            <span className="ml-3 text-xl">빡빡이 포트폴리오</span>
+                            <span className="ml-3 text-xl">JSEOK PortFolio</span>
                         </a>
                     </Link>
 

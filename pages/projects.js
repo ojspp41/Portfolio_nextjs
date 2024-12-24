@@ -11,7 +11,7 @@ export default function Projects({projects}) {
         <Layout >
             <div className="flex flex-col items-center justify-center min-h-screen px-3 mb-10">
                 <Head>
-                    <title>빡코딩 포트폴리오</title>
+                    <title>JSEOK 포트폴리오</title>
                     <meta name="description" content="오늘도 빡코딩!" />
                     <link rel="icon" href="/favicon.ico" />
                 </Head>
@@ -39,18 +39,12 @@ export async function getServerSideProps() {
     const options = {
         method: 'POST',
         headers: {
-          Accept: 'application/json',
-          'Notion-Version': '2022-02-22',
+          'Notion-Version': '2022-06-28',
           'Content-Type': 'application/json',
           Authorization: `Bearer ${TOKEN}`
         },
         body: JSON.stringify({
-            sorts: [
-                {
-                    "property": "Name",
-                    "direction": "ascending"
-                }
-            ],
+            
             page_size: 100
         })
       };
