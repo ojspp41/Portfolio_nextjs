@@ -1,6 +1,6 @@
 import Layout from "../components/layout";
 import Head from "next/head";
-import { TOKEN, DATABASE_ID } from "../config";
+import { TOKEN, DATABASE_ID } from "../config/index.js";
 import ProjectItem from "../components/projects/project-item";
 
 export default function Projects({projects}) {
@@ -35,33 +35,47 @@ export default function Projects({projects}) {
 
 // 각 요청 때마다 호출
 export async function getServerSideProps() {
-
+    
     const options = {
         method: 'POST',
         headers: {
-          'Notion-Version': '2022-06-28',
-          'Content-Type': 'application/json',
-          Authorization: `Bearer ${TOKEN}`
+            'Notion-Version': '2022-06-28',
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${TOKEN}`,
         },
         body: JSON.stringify({
-            
-            page_size: 100
-        })
-      };
+            page_size: 100,
+        }),
+    };
 
-    const res = await fetch(`https://api.notion.com/v1/databases/${DATABASE_ID}/query`, options)
+    try {
+        const res = await fetch(`https://api.notion.com/v1/databases/${DATABASE_ID}/query`, options);
+        
+        if (!res.ok) {
+            throw new Error(`Failed to fetch projects: ${res.status} ${res.statusText}`);
+        }
 
-    const projects = await res.json()
+        const projects = await res.json();
+        // 응답 데이터를 출력
+        // 응답 데이터가 올바른지 확인
+        if (!projects.results) {
+            throw new Error('projects.results is undefined');
+        }
 
-    const projectNames = projects.results.map((aProject) =>(
-        aProject.properties.Name.title[0].plain_text
-    ))
+        const projectNames = projects.results.map((aProject) => (
+            aProject.properties.이름.title[0]?.text.content || "No Name"
+        ));
 
-    console.log(`projectNames : ${projectNames}`);
+        console.log(`Project names: ${projectNames.join(", ")}`);
 
-    return {
-      props: {projects}, // will be passed to the page component as props
-      // getStaticProps() 메소드를 사용한다면 revalidate 로 데이터 변경시 갱신가능!
-      // revalidate: 1 // 데이터 변경이 있으면 갱신 1초 마다
+        return {
+            props: { projects },
+        };
+    } catch (error) {
+        console.error(`Error fetching projects: ${error.message}`);
+        return {
+            props: { projects: { results: [] } }, // 기본값 설정
+        };
     }
 }
+

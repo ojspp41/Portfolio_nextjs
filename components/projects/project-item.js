@@ -2,30 +2,29 @@ import Image from "next/image";
 
 export default function ProjectItem({data}){
 
-    const title = data.properties.Name.title[0].plain_text
-    const github = data.properties.Github.url
-    const youtube = data.properties.Youtube.url
-    const description = data.properties.Description.rich_text[0].plain_text
-    const imgSrc = data.cover.file?.url || data.cover.external.url
-    const tags = data.properties.Tags.multi_select
-    const start = data.properties.WorkPeriod.date.start
-    const end = data.properties.WorkPeriod.date.end
+    const title =
+        data.properties?.이름?.title?.[0]?.plain_text || "제목 없음"; // '이름' 필드에서 제목 추출
+    const github = data.properties?.gitHub?.url || "#"; // 'gitHub' URL
+    const youtube = data.properties?.Youtube?.url || "#"; // 'Youtube' URL
+    const description =
+        data.properties?.설명?.rich_text?.[0]?.plain_text || "설명 없음"; // '설명' 필드에서 텍스트 추출
+    const imgSrc =
+        data.cover?.file?.url || data.cover?.external?.url || "/default-image.jpg"; // 이미지 URL
+    const tags = data.properties?.["다중 선택"]?.multi_select || []; // '다중 선택' 필드
+    const start = data.properties?.날짜?.date?.start || "시작일 없음"; // '날짜' 필드에서 시작일
+    const end = data.properties?.날짜?.date?.end || "종료일 없음"; // '날짜' 필드에서 종료일
+
+    
 
     const calculatedPeriod = (start, end) => {
-        const startDateStringArray = start.split('-');
-        const endDateStringArray = end.split('-');
+        if (!start || !end) return "알 수 없음";
 
-        var startDate = new Date(startDateStringArray[0], startDateStringArray[1], startDateStringArray[2]);
-        var endDate = new Date(endDateStringArray[0], endDateStringArray[1], endDateStringArray[2]);
-
-        console.log(`startDate: ${startDate}`)
-        console.log(`endDate: ${endDate}`)
-
+        const startDate = new Date(start);
+        const endDate = new Date(end);
         const diffInMs = Math.abs(endDate - startDate);
-        const result = diffInMs / (1000 * 60 * 60 * 24);
+        const diffInDays = Math.ceil(diffInMs / (1000 * 60 * 60 * 24));
 
-        console.log(`기간 : ${result}`)
-        return result;
+        return `${diffInDays}일`;
     };
 
     return (
@@ -47,7 +46,7 @@ export default function ProjectItem({data}){
                 <a href={github}>깃허브 바로가기</a>
                 <a href={youtube}>유튜브 시연영상 보러가기</a>
                 <p className="my-1 ">
-                    작업기간 : {start} ~ {end} ({calculatedPeriod(start, end)}일)
+                    작업기간 : {start} ~ {end} ({calculatedPeriod(start, end)})
                 </p>
                 <div className="flex items-start mt-2">
                     {tags.map((aTag) => (
