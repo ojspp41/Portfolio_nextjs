@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export default function Hero() {
     return (
-        <section className="text-gray-600 body-font ">
+        <section className="text-gray-600 body-font">
             <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center pt-0 pb-0">
                 <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
                     <Animation />
@@ -16,7 +16,7 @@ export default function Hero() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 1 }}
                     >
-                        Hi, I'm Junseok Oh, a passionate developer!
+                        Hi, I&apos;m Junseok Oh, a passionate developer!
                         <br className="hidden lg:inline-block" />
                         Striving for better code every day 🚀
                     </motion.h1>
@@ -26,10 +26,10 @@ export default function Hero() {
                         animate={{ opacity: 1 }}
                         transition={{ delay: 0.5, duration: 1 }}
                     >
-                        "I'm a junior computer science student with a strong passion for frontend development. 
+                        &quot;I&apos;m a junior computer science student with a strong passion for frontend development. 
                         I specialize in building dynamic and intuitive user experiences using React and modern web technologies. 
-                        I love solving problems, crafting visually stunning UIs, and continuously pushing myself to grow.
-                        My ultimate goal is to create meaningful applications that deliver value to users."
+                        I love solving problems, crafting visually stunning UIs, and continuously pushing myself to grow. 
+                        My ultimate goal is to create meaningful applications that deliver value to users.&quot;
                     </motion.p>
                     <motion.div 
                         className="flex justify-center"
