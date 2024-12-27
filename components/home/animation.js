@@ -1,15 +1,24 @@
-import React from 'react'
-import Lottie from 'react-lottie-player'
+import React from 'react';
+import dynamic from 'next/dynamic';
 
-import lottieJson from '/public/animation.json'
-const s = dynamic(() => import('react-lottie-player'), { ssr: false });
+// dynamic import를 통해 SSR을 비활성화합니다.
+const Lottie = dynamic(() => import('react-lottie-player'), { ssr: false });
+
+import lottieJson from '/public/animation.json';
+
 export default function Animation() {
   return (
-    <Lottie
-      loop
-      animationData={lottieJson}
-      play
-      style={{objectFit: 'contain', width: `100%`, height: `100%` }}
-    />
-  )
+    <div style={{ width: '100%', height: '100%' }}>
+      <Lottie
+        loop
+        animationData={lottieJson}
+        play
+        style={{
+          objectFit: 'contain',
+          width: '100%',
+          height: '100%',
+        }}
+      />
+    </div>
+  );
 }

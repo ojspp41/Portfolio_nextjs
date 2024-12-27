@@ -1,10 +1,14 @@
 import Link from 'next/link';
 import { Link as ScrollLink } from 'react-scroll';
 import DarkModeToggleButton from './dark-mode-toggle-button';
-import Lottie from 'react-lottie-player';
+import dynamic from 'next/dynamic'; // dynamic import 추가
 import { motion } from 'framer-motion';
+
+// Lottie 컴포넌트를 dynamic import하여 SSR 비활성화
+const Lottie = dynamic(() => import('react-lottie-player'), { ssr: false });
+
 import lottieJson from '/public/profile.json';
-const sd = dynamic(() => import('react-lottie-player'), { ssr: false });
+
 export default function Header() {
     return (
         <header className="text-gray-600 body-font bg-gradient-to-r from-blue-100 via-purple-100 to-pink-100 dark:bg-gray-800 dark:bg-none">
@@ -17,6 +21,7 @@ export default function Header() {
                                 loop
                                 animationData={lottieJson}
                                 play
+                                style={{ width: 100, height: 100 }}
                             />
                         </div>
                         <span className="ml-3 text-2xl font-bold">J`SEOK PortFolio</span>
@@ -78,7 +83,7 @@ export default function Header() {
                     </motion.div>
                 </nav>
 
-                <DarkModeToggleButton/>
+                <DarkModeToggleButton />
             </div>
         </header>
     );
