@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import Layout from '../components/layout';
 import Hero from '../components/home/hero';
-import Introduction from '../components/home/introduction';
+import Introduction from '../components/home/Introduction';
 
 export default function Home() {
   return (
