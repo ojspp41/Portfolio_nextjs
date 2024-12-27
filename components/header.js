@@ -4,7 +4,7 @@ import DarkModeToggleButton from './dark-mode-toggle-button';
 import Lottie from 'react-lottie-player';
 import { motion } from 'framer-motion';
 import lottieJson from '/public/profile.json';
-
+const sd = dynamic(() => import('react-lottie-player'), { ssr: false });
 export default function Header() {
     return (
         <header className="text-gray-600 body-font bg-gradient-to-r from-blue-100 via-purple-100 to-pink-100 dark:bg-gray-800 dark:bg-none">
