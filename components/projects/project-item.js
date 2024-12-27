@@ -1,20 +1,19 @@
 import Image from "next/image";
+import { FaGithub, FaYoutube } from "react-icons/fa";
 
-export default function ProjectItem({data}){
-
-    const title =
-        data.properties?.이름?.title?.[0]?.plain_text || "제목 없음"; // '이름' 필드에서 제목 추출
-    const github = data.properties?.gitHub?.url || "#"; // 'gitHub' URL
-    const youtube = data.properties?.Youtube?.url || "#"; // 'Youtube' URL
+export default function ProjectItem({ data }) {
+    const title = data.properties?.이름?.title?.[0]?.plain_text || "제목 없음";
+    const github = data.properties?.gitHub?.url || "#";
+    const youtube = data.properties?.Youtube?.url || "#";
     const description =
-        data.properties?.설명?.rich_text?.[0]?.plain_text || "설명 없음"; // '설명' 필드에서 텍스트 추출
+        data.properties?.요약?.rich_text?.[0]?.plain_text || "설명 없음";
     const imgSrc =
-        data.cover?.file?.url || data.cover?.external?.url || "/default-image.jpg"; // 이미지 URL
-    const tags = data.properties?.["다중 선택"]?.multi_select || []; // '다중 선택' 필드
-    const start = data.properties?.날짜?.date?.start || "시작일 없음"; // '날짜' 필드에서 시작일
-    const end = data.properties?.날짜?.date?.end || "종료일 없음"; // '날짜' 필드에서 종료일
-
-    
+        data.cover?.file?.url || data.cover?.external?.url || "/default-image.jpg";
+    const tags = data.properties?.["다중 선택"]?.multi_select || [];
+    const start = data.properties?.날짜?.date?.start || "시작일 없음";
+    const end = data.properties?.날짜?.date?.end || "종료일 없음";
+    const des =
+        data.properties?.설명?.rich_text?.[0]?.plain_text || "설명 없음";
 
     const calculatedPeriod = (start, end) => {
         if (!start || !end) return "알 수 없음";
@@ -28,9 +27,10 @@ export default function ProjectItem({data}){
     };
 
     return (
-        <div className="project-card">
+        <div className="relative max-w-sm mx-auto bg-white dark:bg-gray-700 rounded-lg shadow-xl overflow-hidden transform hover:scale-105 transition duration-300 group">
+            {/* Project Image */}
             <Image
-                className="rounded-t-xl"
+                className="rounded-t-lg filter dark:brightness-75 brightness-95"
                 src={imgSrc}
                 alt="cover image"
                 width="100%"
@@ -40,22 +40,50 @@ export default function ProjectItem({data}){
                 quality={100}
             />
 
-            <div className="p-4 flex flex-col">
-                <h1 className="text-2xl font-bold">{title}</h1>
-                <h3 className="mt-4 text-xl">{description}</h3>
-                <a href={github}>깃허브 바로가기</a>
-                <a href={youtube}>유튜브 시연영상 보러가기</a>
-                <p className="my-1 ">
-                    작업기간 : {start} ~ {end} ({calculatedPeriod(start, end)})
+            {/* Overlay Description */}
+            <div className="absolute inset-0 bg-gray-800 bg-opacity-70 text-white flex items-start justify-start p-4 text-base font-bold opacity-0 transform translate-y-full group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                {des}
+            </div>
+
+
+            {/* Project Details */}
+            <div className="p-6">
+                <h1 className="text-2xl font-bold text-gray-800 dark:text-gray-100">{title}</h1>
+                <p>{description}</p>
+                <p className="my-3 text-gray-600 dark:text-gray-300">
+                    작업기간: {start} ~ {end} ({calculatedPeriod(start, end)})
                 </p>
-                <div className="flex items-start mt-2">
-                    {tags.map((aTag) => (
-                        <h1 className="px-2 py-1 mr-2 rounded-md bg-sky-200 dark:bg-sky-700 w-30" key={aTag.id}>{aTag.name}</h1>
+
+                <div className="flex flex-wrap gap-2 mt-4">
+                    {tags.map((tag) => (
+                        <span
+                            className="px-3 py-1 bg-teal-50 dark:bg-teal-800 text-sm text-teal-900 dark:text-teal-100 rounded-md"
+                            key={tag.id}
+                        >
+                            {tag.name}
+                        </span>
                     ))}
                 </div>
 
+                <div className="flex items-center mt-4 space-x-3">
+                    <a
+                        href={github}
+                        className="relative z-10 flex items-center px-4 py-2 bg-gray-600 text-white rounded-md hover:bg-gray-700 transition duration-200"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <FaGithub className="mr-2" /> 깃허브
+                    </a>
+                    <a
+                        href={youtube}
+                        className=" relative z-10 flex items-center px-4 py-2 bg-red-400 text-white rounded-md hover:bg-red-500 transition duration-200"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <FaYoutube className="mr-2" /> 유튜브
+                    </a>
+                </div>
             </div>
-
         </div>
     );
 }

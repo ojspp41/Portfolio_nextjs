@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export default function Hero() {
     return (
-        <section className="text-gray-600 body-font">
+        <section className="text-gray-600 body-font ">
             <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center pt-0 pb-0">
                 <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
                     <Animation />
@@ -39,12 +39,12 @@ export default function Hero() {
                     >
                         <Link href="/projects">
                             <a className="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">
-                                View My Projects
+                                💻View My Projects
                             </a>
                         </Link>
                         <Link href="/contact">
                             <a className="ml-4 inline-flex text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg">
-                                Contact Me
+                                ✉️Contact Me
                             </a>
                         </Link>
                     </motion.div>

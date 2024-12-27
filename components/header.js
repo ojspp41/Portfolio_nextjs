@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { Link as ScrollLink } from 'react-scroll';
 import DarkModeToggleButton from './dark-mode-toggle-button';
 import Lottie from 'react-lottie-player';
 import { motion } from 'framer-motion';
@@ -58,6 +59,22 @@ export default function Header() {
                         >
                             ✉️ 연락하기
                         </a>
+                    </motion.div>
+
+                    {/* 프로필로 스크롤 이동 */}
+                    <motion.div
+                        initial={{ opacity: 0, x: 50 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.5, delay: 0.4 }}
+                    >
+                        <ScrollLink 
+                            to="introduction" 
+                            smooth={true} 
+                            duration={500} 
+                            className="mr-5 px-4 py-2 font-bold text-gray-700 bg-opacity-50 bg-white dark:bg-opacity-20 dark:bg-gray-700 rounded-lg shadow-md hover:bg-opacity-75 hover:shadow-lg transition-all duration-300 cursor-pointer"
+                        >
+                            🙋‍♂️ 프로필
+                        </ScrollLink>
                     </motion.div>
                 </nav>
 
