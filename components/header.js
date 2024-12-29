@@ -1,19 +1,11 @@
 import Link from 'next/link';
 import { Link as ScrollLink } from 'react-scroll';
 import DarkModeToggleButton from './dark-mode-toggle-button';
-import dynamic from 'next/dynamic';
 import { motion } from 'framer-motion';
-
-// Lottie를 dynamic import로 가져오며 SSR 비활성화
-const Lottie = dynamic(() => import('react-lottie-player'), { ssr: false });
-
-// JSON 애니메이션 데이터
-import lottieJson from '/public/profile.json';
+import Lottie from 'react-lottie-player'; // react-lottie-player import
+import lottieJson from '/public/profile.json'; // JSON 애니메이션 데이터
 
 export default function Header() {
-    // 브라우저 환경에서만 렌더링하도록 조건 추가
-    const isBrowser = typeof window !== 'undefined';
-
     return (
         <header className="text-gray-600 body-font bg-gradient-to-r from-blue-100 via-purple-100 to-pink-100 dark:bg-gray-800 dark:bg-none">
             <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
@@ -21,15 +13,13 @@ export default function Header() {
                 <Link href="/">
                     <a className="flex title-font font-medium items-center text-gray-900 dark:text-gray-100 mb-4 md:mb-0">
                         <div className="w-[100px] h-[100px] rounded-full flex items-center justify-center overflow-hidden">
-                            {/* 브라우저 환경에서만 Lottie 렌더링 */}
-                            {isBrowser && (
-                                <Lottie
-                                    loop
-                                    animationData={lottieJson}
-                                    play
-                                    style={{ width: 100, height: 100 }}
-                                />
-                            )}
+                            {/* Lottie Player */}
+                            <Lottie
+                                loop
+                                animationData={lottieJson}
+                                play
+                                style={{ width: 100, height: 100 }}
+                            />
                         </div>
                         <span className="ml-3 text-2xl font-bold">J`SEOK PortFolio</span>
                     </a>
