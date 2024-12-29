@@ -43,7 +43,7 @@ export default function Hero() {
                                 💻View My Projects
                             </a>
                         </Link>
-                        <Link href="/contact">
+                        <Link href="https://open.kakao.com/o/sVInUI6g">
                             <a className="ml-4 inline-flex text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg">
                                 ✉️Contact Me
                             </a>
