@@ -1,9 +1,14 @@
+import React from 'react';
 import Link from 'next/link';
 import { Link as ScrollLink } from 'react-scroll';
 import DarkModeToggleButton from './dark-mode-toggle-button';
+import dynamic from 'next/dynamic';
 import { motion } from 'framer-motion';
-import Lottie from 'react-lottie-player'; // react-lottie-player import
-import lottieJson from '/public/profile.json'; // JSON 애니메이션 데이터
+
+// dynamic import를 통해 SSR을 비활성화합니다.
+const Lottie = dynamic(() => import('react-lottie-player'), { ssr: false });
+
+import lottieJson from '/public/profile.json';
 
 export default function Header() {
     return (
