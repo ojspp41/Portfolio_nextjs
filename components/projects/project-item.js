@@ -68,7 +68,7 @@ export default function ProjectItem({ data }) {
                 <div className="flex items-center mt-4 space-x-3">
                     <a
                         href={github}
-                        className="relative z-10 flex items-center px-4 py-2 bg-gray-600 text-white rounded-md hover:bg-gray-700 transition duration-200"
+                        className="relative z-10 flex items-center px-3 sm:px-4 py-1 sm:py-2 text-sm sm:text-base bg-gray-600 text-white rounded-md hover:bg-gray-700 transition duration-200"
                         target="_blank"
                         rel="noopener noreferrer"
                     >
@@ -76,13 +76,14 @@ export default function ProjectItem({ data }) {
                     </a>
                     <a
                         href={youtube}
-                        className=" relative z-10 flex items-center px-4 py-2 bg-red-400 text-white rounded-md hover:bg-red-500 transition duration-200"
+                        className="relative z-10 flex items-center px-3 sm:px-4 py-1 sm:py-2 text-sm sm:text-base bg-red-400 text-white rounded-md hover:bg-red-500 transition duration-200"
                         target="_blank"
                         rel="noopener noreferrer"
                     >
                         <FaYoutube className="mr-2" /> 유튜브
                     </a>
                 </div>
+
             </div>
         </div>
     );

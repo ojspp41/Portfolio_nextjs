@@ -35,6 +35,7 @@ export default function Header() {
                         initial={{ opacity: 0, x: 50 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.5, delay: 0.1 }}
+                        className="mb-5" // 아래 간격 추가
                     >
                         <Link href="/">
                             <a className="mr-5 px-4 py-2 font-bold text-gray-700 bg-opacity-50 bg-white dark:bg-opacity-20 dark:bg-gray-700 rounded-lg shadow-md hover:bg-opacity-75 hover:shadow-lg transition-all duration-300">
@@ -47,6 +48,7 @@ export default function Header() {
                         initial={{ opacity: 0, x: 50 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.5, delay: 0.2 }}
+                        className="mb-5" // 아래 간격 추가
                     >
                         <Link href="/projects">
                             <a className="mr-5 px-4 py-2 font-bold text-gray-700 bg-opacity-50 bg-white dark:bg-opacity-20 dark:bg-gray-700 rounded-lg shadow-md hover:bg-opacity-75 hover:shadow-lg transition-all duration-300">
@@ -59,6 +61,7 @@ export default function Header() {
                         initial={{ opacity: 0, x: 50 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.5, delay: 0.3 }}
+                        className="mb-5" // 아래 간격 추가
                     >
                         <a 
                             href="https://open.kakao.com/o/sVInUI6g" 
@@ -73,6 +76,7 @@ export default function Header() {
                         initial={{ opacity: 0, x: 50 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.5, delay: 0.4 }}
+                        className="mb-5" // 아래 간격 추가
                     >
                         <ScrollLink 
                             to="introduction" 

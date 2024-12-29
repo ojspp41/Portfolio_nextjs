@@ -8,7 +8,9 @@ export default function Layout({ children }) {
             <div >
                 {children}
             </div>
+            <div className='mb-16'>
 
+            </div>
             <Footer />
         </div>
 
