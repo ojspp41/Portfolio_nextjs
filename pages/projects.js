@@ -40,7 +40,7 @@ export default function Projects({ projects }) {
 }
 
 // 서버사이드 렌더링에서 데이터 가져오기
-export async function getServerSideProps() {
+export async function getStaticProps() {
     const options = {
         method: 'POST',
         headers: {
@@ -68,11 +68,13 @@ export async function getServerSideProps() {
 
         return {
             props: { projects },
+            revalidate: 3600, // 60초마다 재빌드 (원하는 시간으로 조정 가능)
         };
     } catch (error) {
         console.error(`Error fetching projects: ${error.message}`);
         return {
             props: { projects: { results: [] } },
+            revalidate: 3600, // 에러 발생해도 60초 후 재시도
         };
     }
 }
