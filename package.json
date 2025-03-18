@@ -9,7 +9,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@next/swc-win32-x64-msvc": "^15.2.3",
     "dotenv": "^16.0.1",
     "framer-motion": "^11.15.0",
     "lottie-react": "^2.4.0",
