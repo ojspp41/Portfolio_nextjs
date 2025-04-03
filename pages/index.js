@@ -60,10 +60,16 @@ export default function Home({ projects }) {
       <Introduction />
 
       {/* 프로젝트 리스트 섹션 추가 */}
-      <section className="min-h-screen">
-        <h1 className="text-4xl text-gray-500 text-center my-8">
-          ProJect: <span className="text-blue-300">{projects.results.length}</span>
-        </h1>
+      <section className="min-h-screen" id="projects">
+      <h1 className="text-4xl md:text-5xl font-bold text-center text-gray-800 my-12 tracking-tight">
+        전체  {projects.results.length}개의 프로젝트
+      </h1>
+
+
+
+
+      <hr className="w-full border-t-2 border-gray-300" />
+
         {projects.results.map((aProject, index) => (
           <ProjectItem data={aProject} key={aProject.id} index={index} />
         ))}
