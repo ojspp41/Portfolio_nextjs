@@ -401,7 +401,49 @@ const projectData = [
                 url: "/assets/catspot.png"
             }
         }
-    }, {
+    }, 
+    {
+        id: "portfolio-site",
+        properties: {
+          이름: { title: [{ plain_text: "포트폴리오 웹사이트" }] },
+          요약: {
+            rich_text: [
+              {
+                plain_text: "Next.js와 노션 API를 사용한 개인 포트폴리오 웹사이트"
+              }
+            ]
+          },
+          설명: {
+            rich_text: [
+              {
+                plain_text: `개인 포트폴리오 웹사이트는 Next.js를 기반으로 구축되었습니다. Next.js는 서버사이드 렌더링(SSR)을 지원하여 초기 로딩 속도를 빠르게 하고, SEO(검색엔진 최적화)를 개선할 수 있습니다. 또한, 로티 애니메이션 라이브러리를 사용하여 애니메이션 효과를 쉽게 구현하고, 웹사이트에 동적인 시각적 요소를 추가했습니다.
+      
+      포트폴리오 데이터는 노션 API를 통해 불러오며, 노션에서 데이터베이스를 생성하고 이를 API를 통해 가져오는 방식으로 연동했습니다. 이로써 데이터 업데이트와 관리가 용이하게 이루어집니다.
+      
+      웹사이트는 다크 모드와 라이트 모드를 지원하며, useState와 useEffect를 사용하여 모드 변경 상태를 관리합니다. 버튼 클릭 시 모드 전환이 가능하도록 구현하여 사용자에게 편리한 UI 환경을 제공합니다.`
+              }
+            ]
+          },
+          담당: { rich_text: [{ plain_text: "프론트엔드 단독 개발" }] },
+          "다중 선택": {
+            multi_select: [
+              { id: "1", name: "Next.js" },
+              { id: "2", name: "Notion API" },
+              { id: "3", name: "Lottie Animation" },
+              { id: "4", name: "Tailwind CSS" },
+              { id: "5", name: "Vercel" }
+            ]
+          },
+          gitHub: { url: "https://github.com/ojspp41/Portfolio_nextjs" },
+          Youtube: { url: "https://www.youtube.com/watch?v=jDAygPgQty0" }
+        },
+        cover: {
+          file: null,
+          external: { url: "/assets/portfolio.png" }
+        }
+      },
+      
+    {
         id: "comatching-v3",
         properties: {
             이름: {
