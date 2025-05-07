@@ -1,6 +1,6 @@
 import Image from "next/image";
 import {motion} from "framer-motion";
-
+import Link from 'next/link';
 // index에 따라 방향을 달리하는 커스텀 애니메이션 변형
 const itemVariants = {
     hidden: (custom) => ({
@@ -71,15 +71,21 @@ export default function ProjectItem({data, index}) {
     >
             <div
                 className="container mx-auto flex flex-col md:flex-row px-5 py-24 items-center rounded-lg transition-shadow duration-300 border-b border-gray-300">
-                {/* 왼쪽 이미지 */}
-                <div
-                    className="md:mr-8 relative w-full md:w-1/2 h-64 md:h-96 mb-10 md:mb-0 overflow-hidden rounded-lg">
-                    <Image
-                        src={imgSrc}
-                        alt="cover image"
-                        fill
-                        className="object-contain object-center"/>
-                </div>
+                <Link href={`/projects/${data.id}`}>
+                    {/* 왼쪽 이미지 */}
+                    <div
+                        className="md:mr-8 relative w-full md:w-1/2 h-64 md:h-96 mb-10 md:mb-0 overflow-hidden rounded-lg">
+                        <Image
+                            src={imgSrc}
+                            alt="cover image"
+                            width={500}
+                            height={500}
+                            className="object-cover rounded-lg"
+                            />
+
+
+                    </div>
+                </Link>
                 {/* 오른쪽 텍스트 */}
                 <div className="flex flex-col md:w-1/2 text-center md:text-left">
                 <h1 className="title-font text-xl sm:text-5xl font-bold text-gray-900 mb-4 border-b-4 border-black-500 pb-2">
@@ -103,7 +109,14 @@ export default function ProjectItem({data, index}) {
                         )
                     }
 
-                    {introduction && (<p className="mb-6 leading-relaxed">{introduction}</p>)}
+                        {introduction && (
+                        <div className="mb-6 leading-relaxed whitespace-pre-line">
+                            {introduction.split('\n').map((line, idx) => (
+                            <p key={idx} className="mb-2">{line}</p>
+                            ))}
+                        </div>
+                        )}
+
                     <div className="flex justify-center md:justify-start space-x-4">
                         <a
                             href={github}

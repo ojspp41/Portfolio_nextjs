@@ -173,8 +173,8 @@ export default function Introduction() {
                   자격증/어학
                 </h2>
                 <p className="leading-relaxed">
-                  OPIc High <br />
-                  자격증: 정보처리기사, 컴퓨터 활용능력 2급
+                  
+                  자격증:  컴퓨터 활용능력 2급 ,운전면허 1종 보통
                 </p>
               </div>
             </motion.div>
