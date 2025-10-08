@@ -34,7 +34,7 @@ export default function Home({ projects }) {
 
       <Introduction />
 
-      <section className="min-h-screen" id="projects">
+      <section className="min-h-screen  dark:bg-slate-900" id="projects">
         <h1 className="text-4xl md:text-5xl font-bold text-center text-gray-800 my-12 tracking-tight">
           전체 {projects.results.length}개의 프로젝트
         </h1>

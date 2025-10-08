@@ -47,14 +47,9 @@ export default function Header() {
                         transition={{ duration: 0.5, delay: 0.2 }}
                         className="mb-5"
                     >
-                        <ScrollLink 
-                            to="projects" 
-                            smooth={true} 
-                            duration={500} 
-                            className="mr-5 px-4 py-2 font-bold text-gray-700 bg-opacity-50 bg-white dark:bg-opacity-20 dark:bg-gray-700 rounded-lg shadow-md hover:bg-opacity-75 hover:shadow-lg transition-all duration-300 cursor-pointer"
-                        >
+                        <Link href="/projects" className="mr-5 px-4 py-2 font-bold text-gray-700 bg-opacity-50 bg-white dark:bg-opacity-20 dark:bg-gray-700 rounded-lg shadow-md hover:bg-opacity-75 hover:shadow-lg transition-all duration-300">
                             💻 프로젝트
-                        </ScrollLink>
+                        </Link>
                     </motion.div>
 
                     <motion.div
