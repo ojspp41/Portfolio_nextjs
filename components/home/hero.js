@@ -26,12 +26,12 @@ export default function Hero() {
                         transition={{
                             duration: 1
                         }}>
-                        Hi, I&apos;m Junseok Oh, a passionate developer!
+                        안녕하세요, 프론트엔드 개발자 오준석입니다
                         <br className="hidden lg:inline-block"/>
-                        Striving for better code every day 🚀
+                        대용량 트래픽 최적화와 안정적인 아키텍처 설계를 주도합니다
                     </motion.h1>
                     <motion.p
-                        className="mb-8 leading-relaxed"
+                        className="mb-8 leading-relaxed text-gray-700 dark:text-gray-300"
                         initial={{
                             opacity: 0
                         }}
@@ -42,13 +42,29 @@ export default function Hero() {
                             delay: 0.5,
                             duration: 1
                         }}>
-                        &quot;I&apos;m a junior computer science student with a strong passion for
-                        frontend development. I specialize in building dynamic and intuitive user
-                        experiences using React and modern web technologies. I love solving problems,
-                        crafting visually stunning UIs, and continuously pushing myself to grow. My
-                        ultimate goal is to create meaningful applications that deliver value to
-                        users.&quot;
+                        한솔그룹 AI 개발팀에서 5년 차 시니어 포지션을 대체하며, 
+                        <span className="font-bold text-indigo-600"> 13개 계열사·1만 명 규모의 LLM 서비스</span> 프론트엔드 총괄 및 런칭을 성공적으로 완수했습니다.
+                        <br /><br />
+                        <span className="font-semibold">Next.js 15, React 19, TypeScript</span> 기반의 엔터프라이즈 애플리케이션 개발과
+                        <span className="font-semibold"> 실시간 스트리밍 렌더링 최적화</span>에 강점이 있습니다.
                     </motion.p>
+                    <motion.div
+                        className="flex flex-wrap justify-center md:justify-start gap-2 mb-6"
+                        initial={{
+                            opacity: 0
+                        }}
+                        animate={{
+                            opacity: 1
+                        }}
+                        transition={{
+                            delay: 0.8,
+                            duration: 1
+                        }}>
+                        <span className="bg-indigo-100 text-indigo-800 text-sm font-medium px-3 py-1 rounded-full">OSSCA 2025 우수상 (장관상)</span>
+                        <span className="bg-green-100 text-green-800 text-sm font-medium px-3 py-1 rounded-full">오픈소스 개발자 대회 우수작</span>
+                        <span className="bg-purple-100 text-purple-800 text-sm font-medium px-3 py-1 rounded-full">정보처리기사</span>
+                        <span className="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">OPIc IH</span>
+                    </motion.div>
                     <motion.div
                         className="flex justify-center"
                         initial={{
@@ -62,14 +78,15 @@ export default function Hero() {
                             duration: 1
                         }}>
                         <Link
-                            href="/projects"
+                            href="#projects"
                             className="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">
-                            💻View My Projects
+                            View My Projects
                         </Link>
                         <Link
-                            href="https://open.kakao.com/o/sVInUI6g"
+                            href="https://github.com/ojspp41"
+                            target="_blank"
                             className="ml-4 inline-flex text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg">
-                            ✉️Contact Me
+                            GitHub
                         </Link>
                     </motion.div>
                 </div>
