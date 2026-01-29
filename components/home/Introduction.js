@@ -340,17 +340,17 @@ export default function Introduction() {
           <div className="absolute inset-0 bg-gradient-to-br from-indigo-400/90 via-purple-400/90 to-pink-400/90 rounded-3xl"></div>
           <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4xNSI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMiIvPjwvZz48L2c+PC9zdmc+')] opacity-40"></div>
           
-          <div className="relative p-12 text-white">
+          <div className="relative p-12 text-gray-700">
             <div className="text-center mb-10">
               <motion.h2 
-                className="text-4xl font-bold mb-4"
+                className="text-4xl font-bold mb-4 text-gray-800"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
               >
                 Contact Me
               </motion.h2>
-              <p className="text-white/80 text-lg">언제든 연락주세요!</p>
+              <p className="text-gray-600 text-lg">언제든 연락주세요!</p>
             </div>
 
             {/* 연락처 카드들 */}
@@ -358,49 +358,49 @@ export default function Introduction() {
               {/* 이메일 카드 */}
               <motion.a
                 href="mailto:ojspp000@naver.com"
-                className="bg-white/10 backdrop-blur-md rounded-2xl p-6 hover:bg-white/20 transition-all duration-300 group"
+                className="bg-white/40 backdrop-blur-md rounded-2xl p-6 hover:bg-white/60 transition-all duration-300 group"
                 whileHover={{ y: -5 }}
               >
-                <div className="w-14 h-14 bg-white/20 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                  <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="w-14 h-14 bg-indigo-100 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                  <svg className="w-7 h-7 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
                   </svg>
                 </div>
-                <h3 className="font-semibold text-lg mb-2">Email</h3>
-                <p className="text-white/80 text-sm">ojspp000@naver.com</p>
-                <p className="text-white/60 text-sm">ojsppppppp41@gmail.com</p>
+                <h3 className="font-semibold text-lg mb-2 text-gray-800">Email</h3>
+                <p className="text-gray-600 text-sm">ojspp000@naver.com</p>
+                <p className="text-gray-500 text-sm">ojsppppppp41@gmail.com</p>
               </motion.a>
 
               {/* 전화 카드 */}
               <motion.a
                 href="tel:010-7593-4447"
-                className="bg-white/10 backdrop-blur-md rounded-2xl p-6 hover:bg-white/20 transition-all duration-300 group"
+                className="bg-white/40 backdrop-blur-md rounded-2xl p-6 hover:bg-white/60 transition-all duration-300 group"
                 whileHover={{ y: -5 }}
               >
-                <div className="w-14 h-14 bg-white/20 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                  <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="w-14 h-14 bg-green-100 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                  <svg className="w-7 h-7 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
                   </svg>
                 </div>
-                <h3 className="font-semibold text-lg mb-2">Phone</h3>
-                <p className="text-white/80 text-sm">010-7593-4447</p>
-                <p className="text-white/60 text-sm">전화 & 문자 가능</p>
+                <h3 className="font-semibold text-lg mb-2 text-gray-800">Phone</h3>
+                <p className="text-gray-600 text-sm">010-7593-4447</p>
+                <p className="text-gray-500 text-sm">전화 & 문자 가능</p>
               </motion.a>
 
               {/* 위치 카드 */}
               <motion.div
-                className="bg-white/10 backdrop-blur-md rounded-2xl p-6 group"
+                className="bg-white/40 backdrop-blur-md rounded-2xl p-6 group"
                 whileHover={{ y: -5 }}
               >
-                <div className="w-14 h-14 bg-white/20 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                  <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="w-14 h-14 bg-purple-100 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                  <svg className="w-7 h-7 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
                   </svg>
                 </div>
-                <h3 className="font-semibold text-lg mb-2">Location</h3>
-                <p className="text-white/80 text-sm">경기도 시흥시</p>
-                <p className="text-white/60 text-sm">이사 가능</p>
+                <h3 className="font-semibold text-lg mb-2 text-gray-800">Location</h3>
+                <p className="text-gray-600 text-sm">경기도 시흥시</p>
+                <p className="text-gray-500 text-sm">이사 가능</p>
               </motion.div>
             </div>
 
